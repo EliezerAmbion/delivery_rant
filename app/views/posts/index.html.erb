@@ -1,0 +1,25 @@
+<div class="container">
+  <h3>Rants</h3>
+
+
+    <% @posts.each do |post| %>
+
+    <div class="card text-center">
+      <div class="card-header"><%= post.title %></div>
+      <div class="card-body">
+        <h5 class="card-title"><%= post.title %></h5>
+        <p class="card-text"><%= post.body %></p>
+
+        <%= link_to 'Show', post_path(post), class:"btn btn-success" %>
+        <%= link_to 'Update', edit_post_path(post), class:"btn btn-danger" %>
+        <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure you want to delete this article?" }, class:"btn btn-info" %>
+      </div>
+      <div class="card-footer text-muted">2 days ago</div>
+    </div><br>
+
+    <% end %>
+
+  <%# <%= link_to 'New article', articles_new_path %>
+
+</div>
+
